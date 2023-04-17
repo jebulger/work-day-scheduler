@@ -3,6 +3,10 @@
 // in the html.
 $(function () {
   var currentDayEl = document.getElementById("currentDay");
+  var textAreaEl = document.getElementsByClassName("description");
+  var toDos = readLocalStorage();
+  console.log(textAreaEl);
+  console.log(toDos);
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -20,10 +24,12 @@ $(function () {
       input:  userInput,
     };
     var toDos = readLocalStorage();
+    //find that value and replace it using findIndex
+    // if not found, then just put value in the new time slot
     toDos.push(newToDo);
     addToStorage(toDos);
     console.log(localStorage);
-    console.log(newToDo);
+    console.log(toDos);
   })
   
   // TODO: Add code to apply the past, present, or future class to each time
@@ -51,6 +57,7 @@ $(function () {
   function addToStorage(toDos) {
     localStorage.setItem("toDos", JSON.stringify(toDos));
   }
+
   // TODO: Add code to display the current date in the header of the page.
 
   // Grabs current time and stores into variable

@@ -5,7 +5,7 @@
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-_ [Deployed-Application](#deployed-application)
+- [Deployed-Application](#deployed-application)
 
 ## Installation
 

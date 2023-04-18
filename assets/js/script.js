@@ -8,13 +8,15 @@ $(function () {
   var toDos = readLocalStorage();
   storageToPage();
   console.log(toDos);
+  applyTense();
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
-
+  
   // Event listener for the save buttons
   $(".saveBtn").click(function() {
     var userInput = $(this).siblings("textarea").val().trim();
@@ -45,7 +47,140 @@ $(function () {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-  //
+
+  // When the page loads, this function is called and will go and set the
+  // class of the timeblocks based on if they are in the present, past, or
+  // future
+  function applyTense() {
+    var timeNow = dayjs().format('HH');
+    var hour9 = $( '#hour-9' );
+    var hour10 = $( '#hour-10' );
+    var hour11 = $( '#hour-11' );
+    var hour12 = $( '#hour-12' );
+    var hour13 = $( '#hour-13' );
+    var hour14 = $( '#hour-14' );
+    var hour15 = $( '#hour-15' );
+    var hour16 = $( '#hour-16' );
+    var hour17 = $( '#hour-17' );
+
+    if (+timeNow === +(hour9.attr("id").replace(/[^0-9]/g,""))) {
+      hour9.addClass('present');
+      hour9.removeClass('past');
+      hour9.removeClass('future');
+    } else if (+timeNow < +(hour9.attr("id").replace(/[^0-9]/g,""))) {
+      hour9.addClass('future');
+      hour9.removeClass('present');
+      hour9.removeClass('past');
+    } else {
+      hour9.addClass('past');
+      hour9.removeClass('future');
+      hour9.removeClass('present');
+    }
+    if (+timeNow === +(hour10.attr("id").replace(/[^0-9]/g,""))) {
+      hour10.addClass('present');
+      hour10.removeClass('past');
+      hour10.removeClass('future');
+    } else if (+timeNow < +(hour10.attr("id").replace(/[^0-9]/g,""))) {
+      hour10.addClass('future');
+      hour10.removeClass('present');
+      hour10.removeClass('past');
+    } else {
+      hour10.addClass('past');
+      hour10.removeClass('future');
+      hour10.removeClass('present');
+    }
+    if (+timeNow === +(hour11.attr("id").replace(/[^0-9]/g,""))) {
+      hour11.addClass('present');
+      hour11.removeClass('past');
+      hour11.removeClass('future');
+    } else if (+timeNow < +(hour11.attr("id").replace(/[^0-9]/g,""))) {
+      hour11.addClass('future');
+      hour11.removeClass('present');
+      hour11.removeClass('past');
+    } else {
+      hour11.addClass('past');
+      hour11.removeClass('future');
+      hour11.removeClass('present');
+    }
+    if (+timeNow === +(hour12.attr("id").replace(/[^0-9]/g,""))) {
+      hour12.addClass('present');
+      hour12.removeClass('past');
+      hour12.removeClass('future');
+    } else if (+timeNow < +(hour12.attr("id").replace(/[^0-9]/g,""))) {
+      hour12.addClass('future');
+      hour12.removeClass('present');
+      hour12.removeClass('past');
+    } else {
+      hour12.addClass('past');
+      hour12.removeClass('future');
+      hour12.removeClass('present');
+    }
+    if (+timeNow === +(hour13.attr("id").replace(/[^0-9]/g,""))) {
+      hour13.addClass('present');
+      hour13.removeClass('past');
+      hour13.removeClass('future');
+    } else if (+timeNow < +(hour13.attr("id").replace(/[^0-9]/g,""))) {
+      hour13.addClass('future');
+      hour13.removeClass('present');
+      hour13.removeClass('past');
+    } else {
+      hour13.addClass('past');
+      hour13.removeClass('future');
+      hour13.removeClass('present');
+    }
+    if (+timeNow === +(hour14.attr("id").replace(/[^0-9]/g,""))) {
+      hour14.addClass('present');
+      hour14.removeClass('past');
+      hour14.removeClass('future');
+    } else if (+timeNow < +(hour14.attr("id").replace(/[^0-9]/g,""))) {
+      hour14.addClass('future');
+      hour14.removeClass('present');
+      hour14.removeClass('past');
+    } else {
+      hour14.addClass('past');
+      hour14.removeClass('future');
+      hour14.removeClass('present');
+    }
+    if (+timeNow === +(hour15.attr("id").replace(/[^0-9]/g,""))) {
+      hour15.addClass('present');
+      hour15.removeClass('past');
+      hour15.removeClass('future');
+    } else if (+timeNow < +(hour15.attr("id").replace(/[^0-9]/g,""))) {
+      hour15.addClass('future');
+      hour15.removeClass('present');
+      hour15.removeClass('past');
+    } else {
+      hour15.addClass('past');
+      hour15.removeClass('future');
+      hour15.removeClass('present');
+    }
+    if (+timeNow === +(hour16.attr("id").replace(/[^0-9]/g,""))) {
+      hour16.addClass('present');
+      hour16.removeClass('past');
+      hour16.removeClass('future');
+    } else if (+timeNow < +(hour16.attr("id").replace(/[^0-9]/g,""))) {
+      hour16.addClass('future');
+      hour16.removeClass('present');
+      hour16.removeClass('past');
+    } else {
+      hour16.addClass('past');
+      hour16.removeClass('future');
+      hour16.removeClass('present');
+    }
+    if (+timeNow === +(hour17.attr("id").replace(/[^0-9]/g,""))) {
+      hour17.addClass('present');
+      hour17.removeClass('past');
+      hour17.removeClass('future');
+    } else if (+timeNow < +(hour17.attr("id").replace(/[^0-9]/g,""))) {
+      hour17.addClass('future');
+      hour17.removeClass('present');
+      hour17.removeClass('past');
+    } else {
+      hour17.addClass('past');
+      hour17.removeClass('future');
+      hour17.removeClass('present');
+    }
+  }
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?4

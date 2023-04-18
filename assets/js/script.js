@@ -2,11 +2,11 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
+  // after page loads, any previously stored toDo items will be generated
+  // onto the page.
   var currentDayEl = document.getElementById("currentDay");
-  var textAreaEl = document.getElementsByClassName("description");
   var toDos = readLocalStorage();
   storageToPage();
-  console.log(textAreaEl);
   console.log(toDos);
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -25,11 +25,18 @@ $(function () {
       input:  userInput,
     };
     var toDos = readLocalStorage();
-    //find that value and replace it using findIndex
-    // if not found, then just put value in the new time slot
+    time();
     toDos.push(newToDo);
+    // This if statement is checking to see for any changes in the toDo list
+    // based on their corresponding time slot, and overriting the old input
+    // with the new input
+    if (toDos !== []) {
+      i = toDos.findIndex(item => item.time === newToDo.time);
+      if (toDos[i].time == newToDo.time) {
+        toDos[i].input = newToDo.input;
+      }
+    }
     addToStorage(toDos);
-    console.log(localStorage);
     console.log(toDos);
   })
   
@@ -49,7 +56,7 @@ $(function () {
     if (toDos) {
       toDos = JSON.parse(toDos);
     } else {
-      toDos = []
+      toDos = [];
     }
     return toDos;
   }
@@ -59,19 +66,78 @@ $(function () {
     localStorage.setItem("toDos", JSON.stringify(toDos));
   }
 
+  // This function will actually put the local storage on the page
+  // The index is storing the toDo item's position in the array
+  // Using that index to position the toDo items in their correct locations
   function storageToPage() {
     var toDos = readLocalStorage();
-    if (toDos) {
-      index = toDos.findIndex(item => item.time === '9');
-      var textDisplayEl9 = document.getElementById("hour-9").getElementsByClassName("description");
+    index = toDos.findIndex(item => item.time === '9');
+    var textDisplayEl9 = document.getElementById("hour-9").querySelector(".description");
+    if (index !== -1) {
       textDisplayEl9.value = toDos[index].input;
-      console.log(textDisplayEl9);
+    } else {
+      textDisplayEl9.value = "";
+    }
+    index = toDos.findIndex(item => item.time === '10');
+    var textDisplayEl10 = document.getElementById("hour-10").querySelector(".description");
+    if (index !== -1) {
+      textDisplayEl10.value = toDos[index].input;
+    } else {
+      textDisplayEl10.value = "";
+    }
+    index = toDos.findIndex(item => item.time === '11');
+    var textDisplayEl11 = document.getElementById("hour-11").querySelector(".description");
+    if (index !== -1) {
+      textDisplayEl11.value = toDos[index].input;
+    } else {
+      textDisplayEl11.value = "";
+    }
+    index = toDos.findIndex(item => item.time === '12');
+    var textDisplayEl12 = document.getElementById("hour-12").querySelector(".description");
+    if (index !== -1) {
+      textDisplayEl12.value = toDos[index].input;
+    } else {
+      textDisplayEl12.value = "";
+    }
+    index = toDos.findIndex(item => item.time === '13');
+    var textDisplayEl13 = document.getElementById("hour-13").querySelector(".description");
+    if (index !== -1) {
+      textDisplayEl13.value = toDos[index].input;
+    } else {
+      textDisplayEl13.value = "";
+    }
+    index = toDos.findIndex(item => item.time === '14');
+    var textDisplayEl14 = document.getElementById("hour-14").querySelector(".description");
+    if (index !== -1) {
+      textDisplayEl14.value = toDos[index].input;
+    } else {
+      textDisplayEl14.value = "";
+    }
+    index = toDos.findIndex(item => item.time === '15');
+    var textDisplayEl15 = document.getElementById("hour-15").querySelector(".description");
+    if (index !== -1) {
+      textDisplayEl15.value = toDos[index].input;
+    } else {
+      textDisplayEl15.value = "";
+    }
+    index = toDos.findIndex(item => item.time === '16');
+    var textDisplayEl16 = document.getElementById("hour-16").querySelector(".description");
+    if (index !== -1) {
+      textDisplayEl16.value = toDos[index].input;
+    } else {
+      textDisplayEl16.value = "";
+    }
+    index = toDos.findIndex(item => item.time === '17');
+    var textDisplayEl17 = document.getElementById("hour-17").querySelector(".description");
+    if (index !== -1) {
+      textDisplayEl17.value = toDos[index].input;
+    } else {
+      textDisplayEl17.value = "";
     }
   }
-  
-    // index = toDos.findIndex(item => item.time === '9');
 
-  function item(time) {
+  // Function for finding index;
+  function time(item) {
     return item;
   }
 

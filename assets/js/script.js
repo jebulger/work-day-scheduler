@@ -5,6 +5,7 @@ $(function () {
   var currentDayEl = document.getElementById("currentDay");
   var textAreaEl = document.getElementsByClassName("description");
   var toDos = readLocalStorage();
+  storageToPage();
   console.log(textAreaEl);
   console.log(toDos);
   // TODO: Add a listener for click events on the save button. This code should
@@ -56,6 +57,22 @@ $(function () {
   // Function to save todo entry into storage
   function addToStorage(toDos) {
     localStorage.setItem("toDos", JSON.stringify(toDos));
+  }
+
+  function storageToPage() {
+    var toDos = readLocalStorage();
+    if (toDos) {
+      index = toDos.findIndex(item => item.time === '9');
+      var textDisplayEl9 = document.getElementById("hour-9").getElementsByClassName("description");
+      textDisplayEl9.value = toDos[index].input;
+      console.log(textDisplayEl9);
+    }
+  }
+  
+    // index = toDos.findIndex(item => item.time === '9');
+
+  function item(time) {
+    return item;
   }
 
   // TODO: Add code to display the current date in the header of the page.

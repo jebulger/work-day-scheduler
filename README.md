@@ -31,7 +31,7 @@ Upon loading the page, the current date will be displayed at the top of the page
 The save buttons are specific to their adjacent time blocks, so the save button for the 9AM time block will only save what is typed inside that time block.
 
 Example here:
-### ![](./assets/images/05-hw-save-feature_AdobeExpress.gif)
+### ![](./assets/images/05-hw-save-feature_AdobeExpress.gif | width:100)
 
 ## Deployed Application
 **Live URL Here:** [_https://jebulger.github.io/work-day-scheduler/_](_https://jebulger.github.io/work-day-scheduler/)

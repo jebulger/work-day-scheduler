@@ -35,6 +35,6 @@ Example here:
 
 
 ## Deployed Application
-**Live URL Here:** [_https://jebulger.github.io/work-day-scheduler/_](_https://jebulger.github.io/work-day-scheduler/)
+**Live URL Here:** [_https://jebulger.github.io/work-day-scheduler/_](https://jebulger.github.io/work-day-scheduler/)
 
 ### ![](./assets/images/05-hw-2-full-size.png)

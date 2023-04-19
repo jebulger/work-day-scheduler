@@ -31,7 +31,7 @@ Upon loading the page, the current date will be displayed at the top of the page
 The save buttons are specific to their adjacent time blocks, so the save button for the 9AM time block will only save what is typed inside that time block.
 
 Example here:
-### ![05-hw-save-feature_AdobeExpress](https://user-images.githubusercontent.com/127152910/233137178-e1b106c3-9b8f-4a47-a87a-30fa9ae165e6.gif)
+### ![](./assets/images/05-hw-save-feature.gif)
 
 
 ## Deployed Application
